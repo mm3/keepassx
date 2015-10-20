@@ -102,6 +102,7 @@ public Q_SLOTS:
     void copyTitle();
     void copyUsername();
     void copyPassword();
+    void copyOneTimePassword();
     void copyURL();
     void copyNotes();
     void copyAttribute(QAction* action);

@@ -95,7 +95,7 @@ if(CMAKE_COMPILER_IS_GNUCC)
 endif()
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -loath -Wl,--no-add-needed -Wl,--as-needed -Wl,--no-undefined")
+  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--no-add-needed -Wl,--as-needed -Wl,--no-undefined")
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-z,relro")
   set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--no-add-needed -Wl,--as-needed")
   set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,-z,relro")
@@ -187,6 +187,8 @@ if(NOT ZLIB_SUPPORTS_GZIP)
   message(FATAL_ERROR "zlib 1.2.x or higher is required to use the gzip format")
 endif()
 
+find_package(OATH REQUIRED)
+
 if(UNIX)
   check_cxx_source_compiles("#include <sys/prctl.h>
     int main() { prctl(PR_SET_DUMPABLE, 0); return 0; }"
@@ -209,7 +211,7 @@ if(UNIX)
   endif()
 endif()
 
-include_directories(SYSTEM ${GCRYPT_INCLUDE_DIR} ${ZLIB_INCLUDE_DIR})
+include_directories(SYSTEM ${GCRYPT_INCLUDE_DIR} ${ZLIB_INCLUDE_DIR} ${OATH_INCLUDE_DIR})
 
 if(NOT (${CMAKE_VERSION} VERSION_LESS 2.8.3))
   set(PRINT_SUMMARY ON)

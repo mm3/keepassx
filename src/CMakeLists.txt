@@ -231,7 +231,8 @@ target_link_libraries(${PROGNAME}
                       ${QT_QTCORE_LIBRARY}
                       ${QT_QTGUI_LIBRARY}
                       ${GCRYPT_LIBRARIES}
-                      ${ZLIB_LIBRARIES})
+                      ${ZLIB_LIBRARIES}
+                      ${OATH_LIBRARIES})
 
 if(UNIX AND NOT APPLE)
   target_link_libraries(${PROGNAME} ${QT_QTDBUS_LIBRARY})

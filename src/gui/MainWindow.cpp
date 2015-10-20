@@ -179,6 +179,8 @@ MainWindow::MainWindow()
             SLOT(copyUsername()));
     m_actionMultiplexer.connect(m_ui->actionEntryCopyPassword, SIGNAL(triggered()),
             SLOT(copyPassword()));
+    m_actionMultiplexer.connect(m_ui->actionEntryCopyOneTimePassword, SIGNAL(triggered()),
+            SLOT(copyOneTimePassword()));
     m_actionMultiplexer.connect(m_ui->actionEntryCopyURL, SIGNAL(triggered()),
             SLOT(copyURL()));
     m_actionMultiplexer.connect(m_ui->actionEntryCopyNotes, SIGNAL(triggered()),
@@ -284,6 +286,7 @@ void MainWindow::setMenuActionState(DatabaseWidget::Mode mode)
             m_ui->actionEntryCopyTitle->setEnabled(singleEntrySelected);
             m_ui->actionEntryCopyUsername->setEnabled(singleEntrySelected);
             m_ui->actionEntryCopyPassword->setEnabled(singleEntrySelected);
+            m_ui->actionEntryCopyOneTimePassword->setEnabled(singleEntrySelected);
             m_ui->actionEntryCopyURL->setEnabled(singleEntrySelected);
             m_ui->actionEntryCopyNotes->setEnabled(singleEntrySelected);
             m_ui->menuEntryCopyAttribute->setEnabled(singleEntrySelected);
@@ -313,6 +316,7 @@ void MainWindow::setMenuActionState(DatabaseWidget::Mode mode)
             m_ui->actionEntryCopyTitle->setEnabled(false);
             m_ui->actionEntryCopyUsername->setEnabled(false);
             m_ui->actionEntryCopyPassword->setEnabled(false);
+            m_ui->actionEntryCopyOneTimePassword->setEnabled(false);
             m_ui->actionEntryCopyURL->setEnabled(false);
             m_ui->actionEntryCopyNotes->setEnabled(false);
             m_ui->menuEntryCopyAttribute->setEnabled(false);
@@ -340,6 +344,7 @@ void MainWindow::setMenuActionState(DatabaseWidget::Mode mode)
         m_ui->actionEntryCopyTitle->setEnabled(false);
         m_ui->actionEntryCopyUsername->setEnabled(false);
         m_ui->actionEntryCopyPassword->setEnabled(false);
+        m_ui->actionEntryCopyOneTimePassword->setEnabled(false);
         m_ui->actionEntryCopyURL->setEnabled(false);
         m_ui->actionEntryCopyNotes->setEnabled(false);
         m_ui->menuEntryCopyAttribute->setEnabled(false);

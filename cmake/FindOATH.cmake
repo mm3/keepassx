@@ -1,4 +1,4 @@
-#  Copyright (C) 2010 Felix Geyer <debfx@fobos.de>
+#  Copyright (C) 2015 mm3 <mouse166@gmail.com>
 #
 #  This program is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -13,13 +13,11 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-include_directories(../src)
+find_path(OATH_INCLUDE_DIR liboath/oath.h)
 
-add_executable(kdbx-extract kdbx-extract.cpp)
-target_link_libraries(kdbx-extract
-                      keepassx_core
-                      ${QT_QTCORE_LIBRARY}
-                      ${QT_QTGUI_LIBRARY}
-                      ${GCRYPT_LIBRARIES}
-                      ${ZLIB_LIBRARIES}
-                      ${OATH_LIBRARIES})
+find_library(OATH_LIBRARIES oath)
+
+mark_as_advanced(OATH_LIBRARIES OATH_INCLUDE_DIR)
+
+include(FindPackageHandleStandardArgs)
+find_package_handle_standard_args(OATH DEFAULT_MSG OATH_LIBRARIES OATH_INCLUDE_DIR)

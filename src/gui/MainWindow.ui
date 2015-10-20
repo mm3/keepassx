@@ -120,6 +120,8 @@
      <addaction name="actionEntryCopyURL"/>
      <addaction name="actionEntryCopyNotes"/>
      <addaction name="separator"/>
+     <addaction name="actionEntryCopyOneTimePassword"/>
+     <addaction name="separator"/>
     </widget>
     <addaction name="actionEntryNew"/>
     <addaction name="actionEntryClone"/>
@@ -175,6 +177,8 @@
    <addaction name="separator"/>
    <addaction name="actionEntryCopyUsername"/>
    <addaction name="actionEntryCopyPassword"/>
+   <addaction name="separator"/>
+   <addaction name="actionEntryCopyOneTimePassword"/>
    <addaction name="separator"/>
    <addaction name="actionLockDatabases"/>
    <addaction name="actionSearch"/>
@@ -334,6 +338,17 @@
    </property>
    <property name="toolTip">
     <string>Copy password to clipboard</string>
+   </property>
+  </action>
+  <action name="actionEntryCopyOneTimePassword">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>One-time password</string>
+   </property>
+   <property name="toolTip">
+    <string>Copy time-based one-time password to clipboard</string>
    </property>
   </action>
   <action name="actionSettings">
