@@ -117,10 +117,9 @@
      <addaction name="actionEntryCopyTitle"/>
      <addaction name="actionEntryCopyUsername"/>
      <addaction name="actionEntryCopyPassword"/>
+     <addaction name="actionEntryCopyOneTimePassword"/>
      <addaction name="actionEntryCopyURL"/>
      <addaction name="actionEntryCopyNotes"/>
-     <addaction name="separator"/>
-     <addaction name="actionEntryCopyOneTimePassword"/>
      <addaction name="separator"/>
     </widget>
     <addaction name="actionEntryNew"/>

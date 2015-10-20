@@ -85,6 +85,7 @@ MainWindow::MainWindow()
     m_ui->actionEntryClone->setShortcut(Qt::CTRL + Qt::Key_K);
     m_ui->actionEntryCopyUsername->setShortcut(Qt::CTRL + Qt::Key_B);
     m_ui->actionEntryCopyPassword->setShortcut(Qt::CTRL + Qt::Key_C);
+    m_ui->actionEntryCopyPassword->setShortcut(Qt::CTRL + Qt::Key_T);
     setShortcut(m_ui->actionEntryAutoType, QKeySequence::Paste, Qt::CTRL + Qt::Key_V);
     m_ui->actionEntryOpenUrl->setShortcut(Qt::CTRL + Qt::Key_U);
 
@@ -109,6 +110,7 @@ MainWindow::MainWindow()
     m_ui->actionEntryAutoType->setIcon(filePath()->icon("actions", "auto-type", false));
     m_ui->actionEntryCopyUsername->setIcon(filePath()->icon("actions", "username-copy", false));
     m_ui->actionEntryCopyPassword->setIcon(filePath()->icon("actions", "password-copy", false));
+    m_ui->actionEntryCopyOneTimePassword->setIcon(filePath()->icon("actions", "password-generate", false));
 
     m_ui->actionGroupNew->setIcon(filePath()->icon("actions", "group-new", false));
     m_ui->actionGroupEdit->setIcon(filePath()->icon("actions", "group-edit", false));
